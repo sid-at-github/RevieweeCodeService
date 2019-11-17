@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import team.dexter.RevieweeCodeService.models.RevieweeCode;
 
 @Repository
-public interface RevieweeCodeDao extends MongoRepository<RevieweeCode, Long> {
+public interface RevieweeCodeDao extends MongoRepository<RevieweeCode, String> {
 
 }
