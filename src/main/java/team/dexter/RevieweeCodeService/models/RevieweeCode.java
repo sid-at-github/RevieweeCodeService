@@ -1,12 +1,18 @@
 package team.dexter.RevieweeCodeService.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "revieweeCode")
-public class RevieweeCode {
+public class RevieweeCode implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3900583781483349128L;
 
 	@Id
 	private String id;

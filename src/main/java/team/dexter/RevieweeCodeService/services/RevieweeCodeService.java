@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
 import team.dexter.CodeReviewerCommons.dtos.RevieweeCodeRequestDto;
@@ -17,7 +21,10 @@ public class RevieweeCodeService {
 
 	@Autowired
 	private RevieweeCodeDao revieweeCodeDao;
-
+	@Caching(
+			put= { @CachePut(value= "revieweeCodeCache", key= "#revieweeCode.codeId") },
+			evict= { @CacheEvict(value= "allRevieweeCodeCache", allEntries= true) }
+		)
 	public void createRevieweeCode(RevieweeCode revieweeCode) {
 		try {
 			revieweeCodeDao.save(revieweeCode);
@@ -26,6 +33,7 @@ public class RevieweeCodeService {
 		}
 	}
 
+	@Cacheable(value= "allRevieweeCodeCache", unless= "#result.size() == 0")	
 	public List<RevieweeCode> getRevieweeCodeList(RevieweeCodeRequestDto revieweeCodeRequestDto) {
 		List<RevieweeCode> revieweeCodeList = new ArrayList<>();
 		try {
@@ -36,6 +44,7 @@ public class RevieweeCodeService {
 		return revieweeCodeList;
 	}
 	
+	@Cacheable(value= "revieweeCodeCache", key= "#codeId")		
 	public RevieweeCode getRevieweeCode(String codeId) {
 		RevieweeCode revieweeCode = revieweeCodeDao.findById(codeId).get();
 		return revieweeCode;

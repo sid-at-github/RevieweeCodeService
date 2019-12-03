@@ -34,6 +34,7 @@ public class RedisConfig {
 	  .disableCachingNullValues();	
 	return cacheConfig;
    }
+   
    @Bean
    public RedisCacheManager cacheManager() {
 	RedisCacheManager rcm = RedisCacheManager.builder(redisConnectionFactory())

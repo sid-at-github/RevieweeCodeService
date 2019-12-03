@@ -1,7 +1,13 @@
 package team.dexter.RevieweeCodeService.models;
 
-public class Feedback {
+import java.io.Serializable;
 
+public class Feedback implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9009782098794550891L;
 	private String feebackBy;
 	private String comment;
 

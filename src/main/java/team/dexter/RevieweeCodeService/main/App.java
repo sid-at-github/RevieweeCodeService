@@ -2,6 +2,7 @@ package team.dexter.RevieweeCodeService.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @SpringBootApplication
 @EnableMongoRepositories("team.dexter.RevieweeCodeService.daos")
 @ComponentScan(basePackages = { "team.dexter.RevieweeCodeService.*" })
+@EnableCaching
 public class App {
 
 	public static void main(String[] args) {
@@ -31,5 +33,4 @@ public class App {
 	public ObjectMapper objectMapper() {
 		return new ObjectMapper();
 	}
-
 }
