@@ -34,5 +34,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
+		<!--Added ElasticSearch dependency-->
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>transport</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+		<!--Added dependency for Aerospike as a cache-->
+		<dependency>
+			<groupId>com.aerospike</groupId>
+			<artifactId>spring-data-aerospike</artifactId>
+			<version>1.0.2.RELEASE</version>
+		</dependency>
 	</dependencies>
 </project>
