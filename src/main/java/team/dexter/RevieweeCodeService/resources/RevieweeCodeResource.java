@@ -36,8 +36,13 @@ public class RevieweeCodeResource {
 	}
 
 	@GetMapping("/revieweeCode")
-	public List<RevieweeCode> getRevieweeCode(RevieweeCodeRequestDto revieweeCodeRequestDto) {
+	public List<RevieweeCode> getRevieweeCodeList(RevieweeCodeRequestDto revieweeCodeRequestDto) {
 		return revieweeCodeService.getRevieweeCodeList(revieweeCodeRequestDto);
+	}
+	
+	@GetMapping("/revieweeCode/{codeId}")
+	public RevieweeCode getRevieweeCode(@PathVariable String codeId) {
+		return revieweeCodeService.getRevieweeCode(codeId);
 	}
 
 	@PutMapping("/revieweeCode/{codeId}")

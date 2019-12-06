@@ -47,6 +47,11 @@ public class RevieweeCodeService {
 		}
 		return revieweeCodeList;
 	}
+	
+	public RevieweeCode getRevieweeCode(String codeId) {
+		RevieweeCode revieweeCode = revieweeCodeDao.findById(codeId).get();
+		return revieweeCode;
+	}
 
 	public void giveFeedback(String codeId, Feedback feedback) {
 		try {
