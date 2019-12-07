@@ -2,15 +2,15 @@ package team.dexter.RevieweeCodeService.models;
 
 public class Feedback {
 
-	private String feebackBy;
+	private String feedbackBy;
 	private String comment;
 
-	public String getFeebackBy() {
-		return feebackBy;
+	public String getFeedbackBy() {
+		return feedbackBy;
 	}
 
-	public void setFeebackBy(String feebackBy) {
-		this.feebackBy = feebackBy;
+	public void setFeebackBy(String feedbackBy) {
+		this.feedbackBy = feedbackBy;
 	}
 
 	public String getComment() {

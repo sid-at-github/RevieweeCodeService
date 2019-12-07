@@ -9,6 +9,7 @@ public class RevieweeCodeAdapter {
 		RevieweeCodeDocument revieweeCodeDocument = new RevieweeCodeDocument();
 		revieweeCodeDocument.setRevieweeCodeId(revieweeCode.getId());
 		revieweeCodeDocument.setTags(revieweeCode.getTags());
+		revieweeCodeDocument.setId(revieweeCode.getId());
 		return revieweeCodeDocument;
 	}
 }

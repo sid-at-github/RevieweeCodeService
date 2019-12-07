@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import team.dexter.RevieweeCodeService.documents.RevieweeCodeDocument;
 
 @Repository
-public interface RevieweeCodeDocumentDao extends ElasticsearchRepository<RevieweeCodeDocument, Long> {
+public interface RevieweeCodeDocumentDao extends ElasticsearchRepository<RevieweeCodeDocument, String> {
 
 	public List<RevieweeCodeDocument> findByTags(String tags);
 
